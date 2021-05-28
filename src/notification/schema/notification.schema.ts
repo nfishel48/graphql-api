@@ -4,6 +4,10 @@ export const NotificationSchema = new Schema({
   id: {
     type: String,
     hashKey: true,
+    index: {
+      global: true,
+      rangeKey: 'status',
+    },
   },
   targetId: {
     type: String,

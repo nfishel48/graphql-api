@@ -34,8 +34,6 @@ export class NotificationService {
     return this.model
       .query('targetId')
       .eq(targetId)
-      .where('status')
-      .eq(NotificationStatus.Active)
       .exec();
   }
 
@@ -43,8 +41,13 @@ export class NotificationService {
     return this.model
       .query('userId')
       .eq(userId)
-      .where('status')
-      .eq(NotificationStatus.Active)
+      .exec();
+  }
+
+  findById(id: string) {
+    return this.model
+      .query('id')
+      .eq(id)
       .exec();
   }
 }

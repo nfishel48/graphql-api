@@ -37,4 +37,9 @@ export class NotificationResolver {
   notificationByTargetId(@Args('targetId') targetId: string) {
     return this.notificationService.findByTargetId(targetId);
   }
+
+  @Query(/* istanbul ignore next */ () => [Notification])
+  notificationById(@Args('id') id: string) {
+    return this.notificationService.findById(id);
+  }
 }

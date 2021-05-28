@@ -4,6 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { DynamooseModule } from 'nestjs-dynamoose';
 import { NotificationModule } from './notification/notification.module';
 
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -17,8 +18,11 @@ import { NotificationModule } from './notification/notification.module';
       },
     }),
     DynamooseModule.forRoot({
-      local: process.env.IS_DDB_LOCAL === 'true',
-      aws: { region: process.env.REGION },
+      aws: { 
+        accessKeyId:  process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        region: process.env.REGION
+      },
       model: {
         create: false,
         prefix: `${process.env.SERVICE}-${process.env.STAGE}-`,

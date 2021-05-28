@@ -1,4 +1,4 @@
-service: aws-nestjs-starter
+service: nestjs-graphql-api
 
 provider:
   name: aws

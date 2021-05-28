@@ -1,8 +1,8 @@
 {
-  "name": "aws-nestjs-starter",
+  "name": "nestjs-graphql-api",
   "version": "0.0.1",
-  "description": "A starter project that makes creating a deployable AWS Serverless project extremely easy",
-  "author": "hardyscc",
+  "description": "a nestjs api to interact with dynamoDb",
+  "author": "nfishel48",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -28,6 +28,7 @@
     "genres": "ts-node genres.ts -- \"src/**/*.schema.ts\" \"resource/dynamodb.yml\""
   },
   "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.17.0",
     "@graphql-tools/merge": "6.2.14",
     "@nestjs/common": "7.6.17",
     "@nestjs/config": "0.6.3",
