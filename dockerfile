@@ -1,5 +1,7 @@
 FROM node
 
+EXPOSE 3000
+
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 ARG IS_DDB_LOCAL=false
