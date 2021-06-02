@@ -15,7 +15,8 @@ ENV STAGE=${STAGE}
 ARG REGION=us-east-1
 ENV REGION=${REGION}
 #Credentials must be overode at buld time other wise the api will have errors
-#Run with command sudo docker build . -t graphql-api --build-arg AWS_ACCESS_KEY_ID=<value> --build-arg AWS_SECRET_ACCESS_KEY=<value>
+#Build with command sudo docker build . -t graphql-api --build-arg AWS_ACCESS_KEY_ID=<value> --build-arg AWS_SECRET_ACCESS_KEY=<value>
+#Run with  docker run -p 3000:3000 graphql-api
 
 ARG AWS_ACCESS_KEY_ID=default 
 ENV AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
@@ -30,4 +31,8 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "dist/src/main"]
+RUN npm install -g @nestjs/cli
+
+RUN nest build
+
+CMD ["npm", "run", "start:online"]
