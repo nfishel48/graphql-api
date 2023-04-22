@@ -32,7 +32,7 @@
     "@commitlint/config-conventional": "12.1.4",
     "@nestjs/cli": "^7.6.0",
     "@nestjs/config": "^0.6.3",
-    "@nestjs/graphql": "^7.10.6",
+    "@nestjs/graphql": "^11.0.5",
     "@nestjs/platform-express": "^7.6.17",
     "@nestjs/schematics": "7.3.1",
     "@nestjs/testing": "7.6.17",
